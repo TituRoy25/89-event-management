@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Login from "../pages/Login/Login";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Event from "../pages/Event/Event";
 
 
 const myCreatedRoute = createBrowserRouter([
@@ -22,8 +23,14 @@ const myCreatedRoute = createBrowserRouter([
                 element : <About></About>
             },
             {
-                path : "/loing",
+                path : "/login",
                 element : <Login></Login>
+            },
+            {
+                path : "/events/:id",
+                loader : () => fetch("/data.json"),
+                element : <Event></Event>
+                
             }
         ]
     }

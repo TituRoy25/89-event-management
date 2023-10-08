@@ -60,7 +60,7 @@
         "card_bg_color": "#0052ff26",
         "text_color": "#0052FF",
         "button_bg_color": "#F87147",
-        "short_description": "A retirement party is a great way to honor your legacy",
+        "short_description": "A retirement party is a great way to honor your legacy.",
         "description": "If you or someone you know is retiring, there's cause for celebration. After years of hard work and dedication, a retirement party is a great way to honor your legacy, success, and accomplishments throughout the years.",
         "price": "1050.00"
       },
@@ -73,7 +73,7 @@
         "card_bg_color": "#0052ff26",
         "text_color": "#0052FF",
         "button_bg_color": "#79C23F",
-        "short_description": "A baby shower is a party centered on gift-giving to celebrate the delivery",
+        "short_description": "A baby shower is a party centered on gift-giving to celebrate the delivery.",
         "description": "A baby shower is a party centered on gift-giving to celebrate the delivery or expected birth of a child, and the transformation of a woman into a mother.",
         "price": "500.00"
       }

@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div>
             <nav className="flex justify-between items-center py-5 px-2 shadow-md">
-                <h1 className="font-bold text-xl box-content  rounded">Social Events</h1>
+                <h1 className="font-bold  box-content rounded">Social Events</h1>
                 <ul className="flex gap-3">
                     <li>
                         <NavLink

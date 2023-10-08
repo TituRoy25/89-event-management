@@ -6,7 +6,6 @@ import Banner from "../../components/Header/Banner/Banner";
 const Home = () => {
 
     const events = useLoaderData()
-    
 
     return (
         <div>
