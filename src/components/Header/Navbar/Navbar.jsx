@@ -1,7 +1,17 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../firebase/AuthProvider";
 
 
 const Navbar = () => {
+
+    const { user, logout } = useContext(AuthContext);
+    console.log(user,);
+
+    const handleLogout = () => {
+        logout().then()
+    }
+
     return (
         <div>
             <nav className="flex justify-between items-center py-5 px-2 shadow-md">
@@ -37,7 +47,20 @@ const Navbar = () => {
                             Login
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink
+                            to="/register"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-[#42abbe] underline" : ""
+                            }
+                        >
+                            Register
+                        </NavLink>
+                        {user && <button onClick={handleLogout} className=" text-white font-semibold bg-[#42abbe] ml-3 rounded">Logout</button>}
+                        {/* <p>{user?.email}</p> */}
+                    </li>
                 </ul>
+
             </nav>
         </div>
     );

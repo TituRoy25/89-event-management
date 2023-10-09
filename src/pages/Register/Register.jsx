@@ -1,35 +1,32 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../firebase/AuthProvider";
+import swal from 'sweetalert';
 
-const Login = () => {
-    const { googleSignIn, signIn } = useContext(AuthContext);
+
+const Register = () => {
+    const { signUp } = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleGoogle = () => {
-        googleSignIn().then(result => {
-            console.log(result.user);
-        })
-    }
-
-    const handleLogin = () => {
-        if (email, password) {
-            signIn(email, password).then(result => {
-                console.log(result.user);
-            })
-                .catch((err) => {
-                    setError(err.massage);
-                })
+    const handleRegister = () => {
+        if (!/^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
+            setError("Minimum six characters, at least a capital letter & a special character");
         }
-    }
-    
+        else {
+            setError("");
+            if (email) {
+                signUp(email, password).then(result => console.log(result.user))
+                swal("Successful!", "You clicked the button!", "success");
+            }
+        }
+    };
 
     return (
         <div>
-            <h1 className="text-3xl justify-center text-center my10">Please Login</h1>
-            <p className="justify-center text-center my10">{error}</p>
-            <form  className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+            <h1 className="text-3xl justify-center text-center my10">Please Register</h1>
+            <p className="mt-5 justify-center text-center my10">{error}</p>
+            <form className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -46,9 +43,8 @@ const Login = () => {
                     </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button onClick={handleLogin} className="btn btn-primary">Login</button>
-                    <button onClick={handleGoogle} className="btn btn-primary mt-2">Google Login</button>
-                    
+                    <button onClick={handleRegister} className="btn btn-primary">Register</button>
+                    <button className="btn btn-primary mt-2">Google Login</button>
                 </div>
             </form>
 
@@ -56,4 +52,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
