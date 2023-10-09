@@ -6,7 +6,7 @@ import { AuthContext } from "../../../firebase/AuthProvider";
 const Navbar = () => {
 
     const { user, logout } = useContext(AuthContext);
-    console.log(user,);
+    // console.log(user,);
 
     const handleLogout = () => {
         logout().then()
