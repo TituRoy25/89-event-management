@@ -23,11 +23,11 @@ const myCreatedRoute = createBrowserRouter([
             },
             {
                 path : "/about",
-                element : <About></About>
+                element : <PrivateRoute><About></About></PrivateRoute>
             },
             {
                 path : "/detailes",
-                element : <Detailes></Detailes>
+                element : <PrivateRoute><Detailes></Detailes></PrivateRoute>
             },
             {
                 path : "/login",

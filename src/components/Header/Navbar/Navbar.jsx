@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <div>
             <nav className="flex justify-between items-center py-5 px-2 shadow-md">
-                <h1 className="font-bold  box-content rounded">Social Events</h1>
+                <h1 className="text-2xl font-bold  box-content rounded">Social Events</h1>
                 <ul className="flex gap-3">
                     <li>
                         <NavLink
@@ -66,7 +66,7 @@ const Navbar = () => {
                         >
                             Register
                         </NavLink>
-                        {user && <button onClick={handleLogout} className=" text-white font-semibold bg-[#42abbe] ml-3 rounded">Logout</button>}
+                        {user && <button onClick={handleLogout} className=" bg-[#6ddbee] ml-3 rounded">Logout</button>}
                         {/* <p>{user?.email}</p> */}
                     </li>
                 </ul>
